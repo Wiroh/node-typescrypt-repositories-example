@@ -1,0 +1,25 @@
+const path = require('path');
+
+module.exports = {
+  // Connexion à la base de données de test
+  test: {
+    client: 'mysql',
+    connection: 'mysql://root:password@localhost:3306/repository_test',
+    migrations: {
+      directory: path.join(__dirname, 'data', 'migrations')
+    },
+    seeds: {
+      directory: path.join(__dirname, 'data', 'seeds')
+    }
+  },
+  development: {
+    client: 'mysql',
+    connection: 'mysql://root:password@localhost:3306/repository',
+    migrations: {
+      directory: path.join(__dirname, 'data', 'migrations')
+    },
+    seeds: {
+      directory: path.join(__dirname, 'data', 'seeds')
+    }
+  }
+}
